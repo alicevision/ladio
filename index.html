@@ -1,287 +1,367 @@
 <html><head>
-    <link rel="icon" href="images/camera-16.ico">
-    <meta name="description" content="Live Action Data Input / Output">
-    <title>LADIO</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="ladio.css">
-  </head><body>
-    <div class="cover">
-      <div class="navbar">
-        <div class="container">
-          <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active">
-                <a href="#">Home</a>
-              </li>
-              <li class="">
-                <a href="#project">Project</a>
-              </li>
-              <li>
-                <a href="#news">News<br></a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Open Source &nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="#opensource">Open Source</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#openmvg">OpenMVG</a>
-                  </li>
-                  <li>
-                    <a href="#popsift">PopSIFT</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <a href="#partners">Partners</a>
-              </li>
-            </ul>
-          </div>
+        <link rel="icon" href="images/camera-16.ico">
+        <meta name="description" content="Live Action Data Input / Output">
+        <title>LADIO</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="ladio.css">
+    </head><body>
+        <div class="cover">
+            <div class="navbar">
+                <div class="container">
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="">
+                                <a href="#project">Project</a>
+                            </li>
+                            <li>
+                                <a href="#news">News<br></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Open Source &nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#opensource">Open Source</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#openmvg">OpenMVG</a>
+                                    </li>
+                                    <li>
+                                        <a href="#popsift">PopSIFT</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#datasets">Datasets</a>
+                            </li><li class="">
+                                <a href="#partners">Partners</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="background-image-fixed cover-image" style="background-image : url('images/choco_paris_view.png')"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="">
+                            <small class="tittle" style="color:white">&nbsp;LADIO &nbsp;</small>
+                        </h1>
+                        <h2 class="text" style="color:white">Live Action Data Input / Output</h2>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="background-image-fixed cover-image" style="background-image : url('images/choco_paris_view.png')"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1 class="">
-              <small class="tittle" style="color:white">&nbsp;LADIO &nbsp;</small>
-            </h1>
-            <h2 class="text" style="color:white">Live Action Data Input / Output</h2>
-            <br>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="background-image" style="background : url('images/bg-black-01.png') repeat"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <img src="images/schema.png" class="img-responsive img-rounded">
-          </div>
-          <div class="col-md-1">
-            <h3></h3>
-          </div>
-          <div class="col-md-6">
-            <h1 class="text-primary" id="project">Project</h1>
-            <h3></h3>
-            <p class="text-justify text-muted">
-              <br>
-              <b>LADIO&nbsp;</b>will create a central hub with structured access to all
-              data generated on set. This will enable the post-production team to be
-              part of the on-set dataflow, building on the momentum of editing and color
-              grading that are already initiated directly on-set. It will also support
-              digital visual effects (VFX), whose seamless integration between live action
-              and computer graphics elements is even more demanding.
-              <b>LADIO&nbsp;</b>will bring about a VFX paradigm shift by spending more
-              effort on set to drastically improve efficiency, without intruding onto
-              the work of the live action crew. The
-              <b>LADIO&nbsp;</b>hardware and software will streamline the setup of all
-              devices for data collection and monitoring, and track the location of all
-              recorded data in time and space in a common 3D reference system. 3D acquisition
-              of the set with a dedicated in-house pipeline is already a common practice
-              for high-end productions.
-              <b>LADIO&nbsp;</b>will improve and release new open source software libraries
-              to foster interoperability and collaborations.</p>
-            <!-- p class="text-muted">Public project deliverables to the EU commision can be found
+        <div class="section">
+            <div class="background-image" style="background : url('images/bg-black-01.png') repeat"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <a href="images/schema.png"><img src="images/schema.png" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-1">
+                        <h3></h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="text-primary" id="project">Project</h1>
+                        <h3></h3>
+                        <p class="text-justify text-muted">
+                            <br>
+                            <b>LADIO&nbsp;</b>will create a central hub with structured access to all
+                            data generated on set. This will enable the post-production team to be
+                            part of the on-set dataflow, building on the momentum of editing and color
+                            grading that are already initiated directly on-set. It will also support
+                            digital visual effects (VFX), whose seamless integration between live action
+                            and computer graphics elements is even more demanding.
+                            <b>LADIO&nbsp;</b>will bring about a VFX paradigm shift by spending more
+                            effort on set to drastically improve efficiency, without intruding onto
+                            the work of the live action crew. The
+                            <b>LADIO&nbsp;</b>hardware and software will streamline the setup of all
+                            devices for data collection and monitoring, and track the location of all
+                            recorded data in time and space in a common 3D reference system. 3D acquisition
+                            of the set with a dedicated in-house pipeline is already a common practice
+                            for high-end productions.
+                            <b>LADIO&nbsp;</b>will improve and release new open source software libraries
+                            to foster interoperability and collaborations.</p>
+                        <!-- p class="text-muted">Public project deliverables to the EU commision can be found
               <a href="https://github.com/poparteu/ladioproject.github.io/tree/master/deliverables">here</a>.</p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="background-image" style="background : url('images/bg-white-01.png') repeat"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1 class="text-center text-info" id="news">News</h1>
-            <ul class="lead text-left text-muted">
-              <li>15th and 16th December 2016 - LADIO Kickoff meeting in Prague</li>
-            </ul>
-            <div id="fullcarousel-example" data-interval="4000" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="hidden-xs item">
-                  <img src="images/news/kickoff_prague_16dec2016.001.jpg">
-                  <div class="carousel-caption">
-                    <h2>Project Kick-off</h2>
-                    <h3>December 2016 - Prague (Czech Republic)</h3>
-                    <p></p>
-                  </div>
+                    </div>
                 </div>
-                <div class="item active">
-                  <img src="images/news/kickoff_prague_16dec2016.002.jpg">
-                  <div class="carousel-caption">
-                    <h2>Project Kick-off</h2>
-                    <h3>December 2016 - Prague (Czech Republic)</h3>
-                  </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="background-image" style="background : url('images/bg-white-01.png') repeat"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="text-center text-primary" id="news">News</h1>
+                        <ul class="lead text-left text-muted">
+                            <li>16th February 2017 - Tomas Pajdla (CTU) came at Mikros Image to see datasets and discuss about the evolution of the CMPMVS algorithms.
+                        </li>
+                        </ul><ul class="lead text-left text-muted">
+                            <li>23rd to 27th January 2017 - One week workshop at Prague with Simula, Mikros Image and CTU to work on the analysis of CMPMVS and discuss about possible improvements in term of quality and performances.
+                        </li>
+                        </ul><ul class="lead text-left text-muted">
+                            <li>15th and 16th December 2016 - LADIO Kickoff meeting in Prague</li>
+                        </ul>
+                        <div id="fullcarousel-example" data-interval="4000" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="hidden-xs item">
+                                    <img src="images/news/kickoff_prague_16dec2016.001.jpg">
+                                    <div class="carousel-caption">
+                                        <h2>Project Kick-off</h2>
+                                        <h3>December 2016 - Prague (Czech Republic)</h3>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="item active">
+                                    <img src="images/news/kickoff_prague_16dec2016.002.jpg">
+                                    <div class="carousel-caption">
+                                        <h2>Project Kick-off</h2>
+                                        <h3>December 2016 - Prague (Czech Republic)</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
+                            <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
-              <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="background-image" style="background : url('images/bg-black-01.png') repeat"></div>
-      <div class="section">
-        <div class="background-image"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1 class="text-center text-primary" id="opensource">Open Source</h1>
+        <div class="section">
+            <div class="background-image" style="background : url('images/bg-black-01.png') repeat"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center text-primary" id="datasets">Datasets</h1>
+                        <p class="text-left text-muted" >We love to test our algorithms with popular models, which are often considered as reference for datasets. Here are some examples gathered on our AliceVision's website with Sketchfab.</p>
+                        <div class="col-md-4 text-center">
+                            <div class="sketchfab-embed-wrapper">
+                            <iframe src="https://sketchfab.com/models/98aeb4eda062465ba3850dc04018b334/embed" frameborder="0" allowvr="" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                            </div>
+                            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #777777;" text-left="">
+                            <a href="https://sketchfab.com/models/98aeb4eda062465ba3850dc04018b334?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Stanford VSFS Dataset - Auguste</a>
+                            by <a href="https://sketchfab.com/AliceVision?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">AliceVision</a> <br>
+                            on <a href="https://sketchfab.com?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Sketchfab</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="sketchfab-embed-wrapper">
+                            <iframe src="https://sketchfab.com/models/5bc5027d57104ca48fd94922076019aa/embed" frameborder="0" allowvr="" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                            </div>
+                            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #777777;" text-left="">
+                            <a href="https://sketchfab.com/models/5bc5027d57104ca48fd94922076019aa?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Stanford VSFS Dataset - Relief</a>
+                            by <a href="https://sketchfab.com/AliceVision?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">AliceVision</a> <br>
+                            on <a href="https://sketchfab.com?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Sketchfab</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="sketchfab-embed-wrapper">
+                            <iframe src="https://sketchfab.com/models/fc663c87832f4cf983ac8c21f89c735a/embed" frameborder="0" allowvr="" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                            </div>
+                            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #777777;" text-left="">
+                            <a href="https://sketchfab.com/models/fc663c87832f4cf983ac8c21f89c735a?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Stanford VSFS Dataset - Socrate</a>
+                            by <a href="https://sketchfab.com/AliceVision?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">AliceVision</a> <br>
+                            on <a href="https://sketchfab.com?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">sketchfab</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 text-center">
+                            <div class="sketchfab-embed-wrapper">
+                            <iframe src="https://sketchfab.com/models/0bda24ea5acb41778590d58c1923b74e/embed" frameborder="0" allowvr="" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                            </div>
+                            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #777777;" text-left="">
+                            <a href="https://sketchfab.com/models/0bda24ea5acb41778590d58c1923b74e?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Stanford VSFS Dataset - Figure</a>
+                            by <a href="https://sketchfab.com/AliceVision?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">AliceVision</a> <br>
+                            on <a href="https://sketchfab.com?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Sketchfab</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="sketchfab-embed-wrapper">
+                            <iframe src="https://sketchfab.com/models/0d38fbbf35ce44d085e2ec18368942df/embed" frameborder="0" allowvr="" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                            </div>
+                            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #777777;" text-left="">
+                            <a href="https://sketchfab.com/models/0d38fbbf35ce44d085e2ec18368942df?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Fountain R25</a>
+                            by <a href="https://sketchfab.com/AliceVision?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">AliceVision</a> <br>
+                            on <a href="https://sketchfab.com?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Sketchfab</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="sketchfab-embed-wrapper">
+                            <iframe src="https://sketchfab.com/models/e3de0b6f0dbc466197265234ea2f4322/embed" frameborder="0" allowvr="" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                            </div>
+                            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #777777;" text-left="">
+                            <a href="https://sketchfab.com/models/e3de0b6f0dbc466197265234ea2f4322?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">Donald</a>
+                            by <a href="https://sketchfab.com/AliceVision?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">AliceVision</a> <br>
+                            on <a href="https://sketchfab.com?utm_medium=embed&amp;utm_source=website&amp;utm_campain=share-popup" target="_blank" class="text-muted">sketchfab</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <p class="text-justify text-muted">We build a fully integrated software for 3D reconstruction, photomodeling
-                and camera tracking. We aim to provide a strong software basis with state-of-the-art
-                computer vision algorithms that can be tested, analyzed and reused. Links
-                between academia and industry is a requirement to provide cutting-edge
-                algorithms with the robustness and the quality required all along the visual
-                effects and shooting process.</p>
-              <div class="btn-group btn-group-lg"></div>
-            </div>
-            <div class="col-md-6">
-              <p class="text-justify text-muted">The LADIO software builds on a set of core libraries, both newly written
-                ones and such that are adapted from existing software. All of these core
-                libraries are based upon open standards and released in open source. This
-                open approach enables both us and other users to achieve a high degree
-                of integration and easy customisation for any studio pipeline.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p class="text-center text-muted">Beyond our project objectives, open source is a way of life. We love to
-                exchange ideas, improve ourselves while making improvements for other people
-                and discover new collaboration opportunities to expand everybody’s horizon.</p>
-            </div>
-          </div>
         </div>
-        <div>
-          <br>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="images/openMVG_example.jpg" class="img-responsive">
-            </div>
-            <div class="col-md-6">
-              <h1 class="text-primary" id="openmvg"></h1>
-              <h3 class="text-left text-primary" style="color: rgb(0, 0, 0);">
-                <a href="https://github.com/poparteu/openMVG">
+        <div class="section">
+            <div class="background-image" style="background : url('images/bg-white-01.png') repeat"></div>
+            <div class="section">
+                <div class="background-image"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center text-primary" id="opensource">Open Source</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-justify text-muted">We build a fully integrated software for 3D reconstruction, photomodeling
+                                and camera tracking. We aim to provide a strong software basis with state-of-the-art
+                                computer vision algorithms that can be tested, analyzed and reused. Links
+                                between academia and industry is a requirement to provide cutting-edge
+                                algorithms with the robustness and the quality required all along the visual
+                                effects and shooting process.</p>
+                            <div class="btn-group btn-group-lg"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-justify text-muted">The LADIO software builds on a set of core libraries, both newly written
+                                ones and such that are adapted from existing software. All of these core
+                                libraries are based upon open standards and released in open source. This
+                                open approach enables both us and other users to achieve a high degree
+                                of integration and easy customisation for any studio pipeline.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center text-muted">Beyond our project objectives, open source is a way of life. We love to
+                                exchange ideas, improve ourselves while making improvements for other people
+                                and discover new collaboration opportunities to expand everybody’s horizon.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/openMVG_example.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-6">
+                            <h1 class="text-primary" id="openmvg"></h1>
+                            <h3 class="text-left text-primary" style="color: rgb(0, 0, 0);">
+                                <a href="https://github.com/poparteu/openMVG">
                   <span class="fa fa-2x fa-github">&nbsp;</span>
                   <span style="font-size: 36px; line-height: 1.1; text-align: left;">OpenMVG</span>
                 </a>
-              </h3>
-              <h3 class="text-muted">Open Multiple View Geometry</h3>
-              <p class="text-muted">OpenMVG library solves classical problems in Multiple View Geometry and
-                provides a full Structure-from-Motion pipeline with a strong focus on accuracy.
-                The library scope is not limited to the creative sectors but can be used
-                in a wide spectrum of fields, like urban planning, industrial design, archeology,
-                medical applications, etc.</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <br>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="images/sift_keypoints.jpg" class="img-responsive">
-            </div>
-            <div class="col-md-6">
-              <h1 class="text-primary" id="popsift"></h1>
-              <h3 class="text-left text-primary" style="color: rgb(0, 0, 0);">
-                <a href="https://github.com/poparteu/popsift">
+                            </h3>
+                            <h3 class="text-muted">Open Multiple View Geometry</h3>
+                            <p class="text-muted">OpenMVG library solves classical problems in Multiple View Geometry and
+                                provides a full Structure-from-Motion pipeline with a strong focus on accuracy.
+                                The library scope is not limited to the creative sectors but can be used
+                                in a wide spectrum of fields, like urban planning, industrial design, archeology,
+                                medical applications, etc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/sift_keypoints.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-6">
+                            <h1 class="text-primary" id="popsift"></h1>
+                            <h3 class="text-left text-primary" style="color: rgb(0, 0, 0);">
+                                <a href="https://github.com/poparteu/popsift">
                 <span class="fa fa-2x fa-github">&nbsp;</span>
                 <span style="font-size: 36px; line-height: 1.1; text-align: left;">PopSIFT</span>
                 </a>
-              </h3>
-              <h3 class="text-muted">Scale-Invariant Feature Transform (SIFT)</h3>
-              <p class="text-muted">This library provides a GPU implementation of SIFT.
-                <br>25 fps on HD images on recent graphic cards.</p>
+                            </h3>
+                            <h3 class="text-muted">Scale-Invariant Feature Transform (SIFT)</h3>
+                            <p class="text-muted">This library provides a GPU implementation of SIFT.
+                                <br>25 fps on HD images on recent graphic cards.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="background-image" style="background : url('images/bg-white-01.png') repeat"></div>
-      <div class="container text-left">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="text-center text-primary" id="partners">Partners</h1>
-            <h3 class="text-center text-primary"></h3>
-            <p class="lead text-center text-muted"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="container">
-            <div class="row text-center">
-              <div class="col-md-2"></div>
-              <div class="col-md-2">
-                <a href="http://cmp.felk.cvut.cz/">
+        <div class="section">
+            <div class="background-image" style="background : url('images/bg-black-01.png') repeat"></div>
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center text-primary" id="partners">Partners</h1>
+                        <h3 class="text-center text-primary"></h3>
+                        <p class="lead text-center text-muted"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                                <a href="http://cmp.felk.cvut.cz/">
               <img src="images/partners/ctu_300x300.png" class="center-block img-responsive">
                   <p class="text-muted"><br>Czech Technical University in Prague, Czech Republic</p>
               </a>
-              </div>
-              <div class="col-md-2">
-                <a href="http://www.enseeiht.fr/en/index.html">
+                            </div>
+                            <div class="col-md-2">
+                                <a href="http://www.enseeiht.fr/en/index.html">
               <img src="images/partners/inp_300x300.png" class="img-responsive">
               <p class="text-muted"><br>Institut National Polytechnique de Toulouse, France</p>
               </a>
-              </div>
-              <div class="col-md-2">
-                <a href="http://mikrosimage.eu">
+                            </div>
+                            <div class="col-md-2">
+                                <a href="http://mikrosimage.eu">
               <img src="images/partners/mikros_300x300.png" class="img-responsive">
                   <p class="text-muted"><br>Mikros Image, France</p>
               </a>
-              </div>
-              <div class="col-md-2">
-                <a href="http://simula.no">
+                            </div>
+                            <div class="col-md-2">
+                                <a href="http://simula.no">
               <img src="images/partners/simula_300x300.png" class="img-responsive">
               <p class="text-muted"><br>Simula Research Laboratory AS, Norway</p>
               </a>
-              </div>
-              <div class="col-md-2"></div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <br>
+                                <p class="lead text-center text-muted">The coordinator of this project may be reached at
+                                    <a href="mailto:griff@simula.no">griff@simula.no</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <br>
-                <p class="lead text-center text-muted">The coordinator of this project may be reached at
-                  <a href="mailto:griff@simula.no">griff@simula.no</a>
-                </p>
-              </div>
+        </div>
+        <div class="section">
+            <div class="background-image" style="background : url('images/bg-white-01.png') repeat"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-1">
+                        <img src="images/partners/flagge_eu.png" class="img-responsive">
+                    </div>
+                    <div class="col-md-7">
+                        <p class="text-muted">This project has received funding from the European Union’s Horizon 2020
+                            research and innovation programme under grant agreement No 731970.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="background-image" style="background : url('images/bg-black-01.png') repeat"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-1">
-            <img src="images/partners/flagge_eu.png" class="img-responsive">
-          </div>
-          <div class="col-md-7">
-            <p class="text-muted">This project has received funding from the European Union’s Horizon 2020
-              research and innovation programme under grant agreement No 731970.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
+    
 
 </body></html>
