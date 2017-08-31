@@ -276,7 +276,7 @@
     </rdfs:comment>
   </rdf:Property>
 
-  <rdfs:Class rdf:ID="FreeRunning TimeRecorder">
+  <rdfs:Class rdf:ID="FreeRunningTimeRecorder">
     <rdfs:subClassOf>
       <rdfs:Class rdf:about="#Recorder"/>
     </rdfs:subClassOf>
