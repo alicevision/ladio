@@ -13,7 +13,7 @@
     xmlns:vann="http://purl.org/vocab/vann/"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:tim="http://baseTime.fims.tv#"
-    xmlns:ladio="http://ladioprojects.eu/ontologies/ladio#">
+    xmlns:ladio="http://ladioprojects.eu/ontologies/ladio#"
   xml:base="http://ladioprojects.eu/ontologies/ladio">
   <owl:Ontology rdf:about="">
     <dc:publisher xml:lang="ch">LADIO Project</dc:publisher>
@@ -34,7 +34,7 @@
 
   <rdfs:Class rdf:ID="NarrativeScene">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">NarrativeScene</rdfs:label>
     <rdfs:comment xml:lang="en">The place where a film shot takes place.</rdfs:comment>
@@ -42,7 +42,7 @@
 
   <rdfs:Class rdf:ID="Shot">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Shot</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -52,7 +52,7 @@
 
   <rdfs:Class rdf:ID="Take">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Take</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -62,7 +62,7 @@
 
   <rdfs:Class rdf:ID="VirtualScene">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">VirtualScene</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -72,7 +72,7 @@
 
   <rdfs:Class rdf:ID="Flow">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Flow</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -82,7 +82,7 @@
 
   <rdfs:Class rdf:ID="Recorder">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionDevice">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionDevice"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Recorder</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -92,7 +92,7 @@
 
   <rdfs:Class rdf:ID="ReconstructionJob">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">ReconstructionJob</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -102,7 +102,7 @@
 
   <rdfs:Class rdf:ID="Shooting">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Shooting</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -112,7 +112,7 @@
 
   <rdfs:Class rdf:ID="Preparation">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob">
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Preparation</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -121,16 +121,10 @@
   </rdfs:Class>
 
   <rdfs:Property rdf:ID="hasParent">
-    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMemberOf">
-    <rdfs:domain>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <rdfs:Class rdf:resource="#Shot"/>
-          <rdfs:Class rdf:resource="#Take"/>
-          <rdfs:Class rdf:resource="#VirtualScene"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMemberOf"/>
+    <rdfs:domain rdf:resource="#Shot"/>
+    <rdfs:domain rdf:resource="#Take"/>
+    <rdfs:domain rdf:resource="#VirtualScene"/>
     <rdfs:range rdf:resource="#Group"/>
     <rdfs:label xml:lang="en">parent</rdfs:label>
     <rdfs:comment xml:lang="en">
@@ -141,7 +135,7 @@
   </rdfs:Property>
 
   <rdfs:Property rdf:ID="isInput">
-    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates"/>
     <rdfs:domain rdf:resource="#Flow"/>
     <rdfs:range rdf:resource="#BusinessObject"/>
 
@@ -152,7 +146,7 @@
   </rdfs:Property>
 
   <rdfs:Property rdf:ID="hasScene">
-    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#basedOn">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#basedOn"/>
     <rdfs:domain rdf:resource="#ReconstructionJob"/>
     <rdfs:range rdf:resource="#VirtualScene"/>
     <rdfs:label xml:lang="en">hasScene</rdfs:label>
@@ -162,7 +156,7 @@
   </rdfs:Property>
 
   <rdfs:Property rdf:ID="input">
-    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasInputMediaResource">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasInputMediaResource"/>
     <rdfs:domain rdf:resource="#ReconstructionJob"/>
     <rdfs:range rdf:resource="#Flow"/>
     <rdfs:label xml:lang="en">input</rdfs:label>
@@ -183,7 +177,7 @@
   </rdfs:Property>
 
   <rdfs:Property rdf:ID="hasRecorder">
-    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasProductionDevice">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasProductionDevice"/>
     <rdfs:domain rdf:resource="#Flow"/>
     <rdfs:range rdf:resource="#Recorder"/>
     <rdfs:label xml:lang="en">has Recorder</rdfs:label>
@@ -203,7 +197,7 @@
   </rdfs:Property>
 
   <rdfs:Property rdf:ID="hasShot">
-    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAssociatedProductionJob">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAssociatedProductionJob"/>
     <rdfs:domain rdf:resource="#Shooting"/>
     <rdfs:range rdf:resource="#Shot"/>
     <rdfs:label xml:lang="en">has Shot</rdfs:label>
@@ -213,7 +207,7 @@
   </rdfs:Property>
 
   <rdfs:Property rdf:ID="hasTake">
-    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAssociatedProductionJob">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAssociatedProductionJob"/>
     <rdfs:domain rdf:resource="#Shooting"/>
     <rdfs:range rdf:resource="#Take"/>
     <rdfs:label xml:lang="en">has Take</rdfs:label>
@@ -284,7 +278,7 @@
 
   <rdfs:Class rdf:ID="FreeRunning TimeRecorder">
     <rdfs:subClassOf>
-      <rdfs:Class rdf:about="#Recorder">
+      <rdfs:Class rdf:about="#Recorder"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Free Running Time Recorder</rdfs:label>
     <rdfs:comment xml:lang="en">
