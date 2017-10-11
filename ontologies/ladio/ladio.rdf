@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+    xmlns:ebuccdm="http://www.ebu.ch/metadata/ontologies/ebuccdm#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:tim="http://baseTime.fims.tv#"
+    xmlns:ladio="http://ladioprojects.eu/ontologies/ladio#"
+  xml:base="http://ladioprojects.eu/ontologies/ladio">
+  <owl:Ontology rdf:about="">
+    <dc:publisher xml:lang="ch">LADIO Project</dc:publisher>
+    <dc:description xml:lang="en">The LADIO data model has been developed to extend the EBUCore CCDM for a better maintenance and transfer of information between information recorded on a film set to post-production services. It is based on the EBUCore.</dc:description>
+    <owl:versionInfo xml:lang="en">Initial version.</owl:versionInfo>
+    <dc:title xml:lang="en">LADIO Data Model</dc:title>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2017-08-29</dct:modified>
+    <owl:versionInfo xml:lang="en">This is the initial version.</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    <dc:rights xml:lang="en">Copyright 2017 Simula and MikrosImage</dc:rights>
+    <dc:creator xml:lang="no">Carsten Griwodz, Simula</dc:creator>
+    <dc:contributor xml:lang="fr">Thomas Eskenazi, MikrosImage</dc:contributor>
+    <cc:licence rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://creativecommons.org/licenses/by-sa/3.0/</cc:licence>
+    <vs:term_status xml:lang="en">draft</vs:term_status>
+  </owl:Ontology>
+
+  <rdfs:Class rdf:ID="NarrativeScene">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">NarrativeScene</rdfs:label>
+    <rdfs:comment xml:lang="en">The place where a film shot takes place.</rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="Shot">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Shot</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A temporal segment of a narrative that is filmed at once (Live Action).
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="Take">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Take</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A Take is an instance of a Shot, where each Take is one recording of the Short's narrative segment.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="VirtualScene">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">VirtualScene</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      The set of all audiovisual elements that are combined to create a Take that represents a narrative segment.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="Flow">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Flow</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      The Flow is a special MediaResource without own media content that deals with clock translation between wallclock time and drifting recorder clocks as well as temporal sub-sequences.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="Recorder">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionDevice"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Recorder</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A Recorder maintains all the static properties of a recording device that was used to create a Flow.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="ReconstructionJob">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">ReconstructionJob</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A ReconstructionJob is a generic class that describes how a new VirtualScene including its Flows is generated from one or more MediaResources.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="Shooting">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Shooting</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      Shooting is a ProductionJob that specifies how the Flows of a Take are produced.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="Preparation">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Preparation</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      Preparation is a ProductionJob that ties the requirements for recording elements to a NarrativeScene, including the required recording and transcoding devices.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Property rdf:ID="hasParent">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMemberOf"/>
+    <rdfs:domain rdf:resource="#Shot"/>
+    <rdfs:domain rdf:resource="#Take"/>
+    <rdfs:domain rdf:resource="#VirtualScene"/>
+    <rdfs:range rdf:resource="#Group"/>
+    <rdfs:label xml:lang="en">parent</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      VirtualScene, Take, Shot and NarrativeScene have a hierarchical
+      relation that is implemented through inheritance of EditorialObject,
+      which inherits Group. The hierarchy is not enforced by the schema.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="isInput">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates"/>
+    <rdfs:domain rdf:resource="#Flow"/>
+    <rdfs:range rdf:resource="#BusinessObject"/>
+
+    <rdfs:label xml:lang="en">parent</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      Express the membership of Flows in a VirtualScene.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="hasScene">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#basedOn"/>
+    <rdfs:domain rdf:resource="#ReconstructionJob"/>
+    <rdfs:range rdf:resource="#VirtualScene"/>
+    <rdfs:label xml:lang="en">hasScene</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      Several ReconstructionJobs can generate the media content that makes up the MediaResources in a scene. This ranges from static 3D reconstruction to color correction.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="input">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasInputMediaResource"/>
+    <rdfs:domain rdf:resource="#ReconstructionJob"/>
+    <rdfs:range rdf:resource="#Flow"/>
+    <rdfs:label xml:lang="en">input</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A ReconstructionJob refers to all Flows that it requires as input for
+      generating the media content in a VirtualScene.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="output">
+    <rdfs:domain rdf:resource="#ReconstructionJob"/>
+    <rdfs:range rdf:resource="#MediaResource"/>
+    <rdfs:label xml:lang="en">output</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A ReconstructionJob refers to all Flows that it requires as input for
+      generating the media content in a VirtualScene.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="hasRecorder">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasProductionDevice"/>
+    <rdfs:domain rdf:resource="#Flow"/>
+    <rdfs:range rdf:resource="#Recorder"/>
+    <rdfs:label xml:lang="en">has Recorder</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A Flow refers to a set of Recorders that have been used in its generation.
+      This may be cameras, but also editing software.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="hasSelection">
+    <rdfs:domain rdf:resource="#Preparation"/>
+    <rdfs:range rdf:resource="#Recorder"/>
+    <rdfs:label xml:lang="en">has Selection</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      Devices that are used in a production process must be selected during Preparation. This allows to maintain the list of selected Recorders before they have actually been used to create Flows.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="hasShot">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAssociatedProductionJob"/>
+    <rdfs:domain rdf:resource="#Shooting"/>
+    <rdfs:range rdf:resource="#Shot"/>
+    <rdfs:label xml:lang="en">has Shot</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      Maintain a list of Shots that make up the timeline of a Narrative Scene.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Property rdf:ID="hasTake">
+    <rdfs:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAssociatedProductionJob"/>
+    <rdfs:domain rdf:resource="#Shooting"/>
+    <rdfs:range rdf:resource="#Take"/>
+    <rdfs:label xml:lang="en">has Take</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      Maintain a list of Takes that were created for a Shooting.
+    </rdfs:comment>
+  </rdfs:Property>
+
+  <rdfs:Class rdf:ID="WallclockTime">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Wallclock Time</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A time source that is considered global for a particular NarrativeScene of a set. When a FreeRunningTimeRecorder exists to create a stream of timecodes, it must use the WallclockTime that is associated with the correct NarrativeScene.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdf:Property rdf:ID="isWallclockTimeOf">
+    <rdfs:label xml:lang="en">isWallclockTimeOf</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A WallclockTime can be the time source for several NarrativeScenes.
+    </rdfs:comment>
+    <rdfs:domain rdf:resource="#WallclockTime"/>
+    <rdfs:range rdf:resource="#NarrativeScene"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="hasWallclockTime">
+    <rdfs:label xml:lang="en">hasWallclockTime</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A NarrativeScene should have an associated WallclockTime unless stream synchronization is not relevant.
+    </rdfs:comment>
+    <rdfs:domain rdf:resource="#NarrativeScene"/>
+    <rdfs:range rdf:resource="#WallclockTime"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="generatesTimecodesFrom">
+    <rdfs:label xml:lang="en">generatesTimecodesFrom</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A FreeRunningTimeRecorder creates a stream of timecodes from this source.
+    </rdfs:comment>
+    <rdfs:domain rdf:resource="#FreeRunningTimeRecorder"/>
+    <rdfs:range rdf:resource="#WallclockTime"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="RecorderTime">
+    <rdfs:label xml:lang="en">Recorder time (timecode)</rdfs:label>
+    <rdfs:comment xml:lang="en">The start time of the MediaResource on the Recorder timeline. The value is given as a SMPTE timecode.</rdfs:comment>
+    <rdfs:domain rdf:resource="#MediaResource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="WallclockDrift">
+    <rdfs:label xml:lang="en">Wallclock Drift</rdfs:label>
+    <rdfs:domain rdf:resource="#Flow"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">
+      Clock drift refers to a clock that does not tick at exactly the same rate as a given reference clock. Recorders that implement a drift estimation can store their estimate in the Flow. Encoded as NTPTime (RFC5905).
+    </rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="WallclockSkew">
+    <rdfs:label xml:lang="en">Wallclock Skew</rdfs:label>
+    <rdfs:domain rdf:resource="#Flow"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:comment xml:lang="en">
+      Clock skew refers to a system in which the same clock signal reaches different components of a system at different times. This attribute must be derived by external means (GPS clock, post-processing) and added to the Flow. It is a multiplier defined as a double.
+    </rdfs:comment>
+  </rdf:Property>
+
+  <rdfs:Class rdf:ID="FreeRunningTimeRecorder">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#Recorder"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Free Running Time Recorder</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      This is a specific type of recorder that does not generate any Flow, but only maintains a medium with a stream of timecodes.
+    </rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="NarrativeTime">
+    <rdfs:label xml:lang="en">Narrative Time</rdfs:label>
+    <rdfs:domain rdf:resource="#Shot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">
+      A Shot has a well-known temporal location on the timeline of a NarrativeScene. The Narrative Time encodes this as a timecode.
+    </rdfs:comment>
+  </rdfs:Class>
+
+</rdf:RDF>
+
