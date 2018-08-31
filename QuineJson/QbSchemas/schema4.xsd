@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.quine.no/core/v1_0.xsd" elementFormDefault="qualified" targetNamespace="http://schemas.quine.no/core/v1_0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ParameterSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="I" type="tns:ArrayOfParameterOfInt64" />
+      <xs:element minOccurs="0" maxOccurs="1" name="F" type="tns:ArrayOfParameterOfDouble" />
+      <xs:element minOccurs="0" maxOccurs="1" name="S" type="tns:ArrayOfParameterOfString" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfParameterOfInt64">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParameterOfInt64" nillable="true" type="tns:ParameterOfInt64" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParameterOfInt64">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DimensionOfInt64">
+        <xs:attribute name="Key" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DimensionOfInt64">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Value" type="xs:long" />
+    </xs:sequence>
+    <xs:attribute name="Unit" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfParameterOfDouble">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParameterOfDouble" nillable="true" type="tns:ParameterOfDouble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParameterOfDouble">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DimensionOfDouble">
+        <xs:attribute name="Key" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DimensionOfDouble">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Value" type="xs:double" />
+    </xs:sequence>
+    <xs:attribute name="Unit" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfParameterOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParameterOfString" nillable="true" type="tns:ParameterOfString" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParameterOfString">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DimensionOfString">
+        <xs:attribute name="Key" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DimensionOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Value" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Unit" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="TimeReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Timestamp" type="tns:Timestamp" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Timecode" type="tns:TimecodeTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Timestamp">
+    <xs:simpleContent>
+      <xs:extension base="xs:dateTime">
+        <xs:attribute name="TzOffset" type="xs:short" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TimecodeTime">
+    <xs:attribute name="H" type="xs:byte" use="required" />
+    <xs:attribute name="M" type="xs:byte" use="required" />
+    <xs:attribute name="S" type="xs:byte" use="required" />
+    <xs:attribute name="F" type="xs:int" use="required" />
+    <xs:attribute default="-1" name="N" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="TimecodeRate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Rational">
+        <xs:attribute name="Drop" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Rational">
+    <xs:attribute name="Num" type="xs:int" use="required" />
+    <xs:attribute name="Den" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DimensionOfVector2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Value" type="tns:Vector2" />
+    </xs:sequence>
+    <xs:attribute name="Unit" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Vector2">
+    <xs:attribute name="X" type="xs:float" use="required" />
+    <xs:attribute name="Y" type="xs:float" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Vector3">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Vector2">
+        <xs:attribute name="Z" type="xs:float" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Color">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Vector3">
+        <xs:attribute name="Colorspace" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DimensionOfSingle">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Value" type="xs:float" />
+    </xs:sequence>
+    <xs:attribute name="Unit" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Hash">
+    <xs:simpleContent>
+      <xs:extension base="xs:hexBinary">
+        <xs:attribute name="Algorithm" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DimensionOfInt32">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Value" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="Unit" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.quine.no/augmented/v1_0.xsd" elementFormDefault="qualified" targetNamespace="http://schemas.quine.no/augmented/v1_0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.quine.no/core/v1_0.xsd" />
+  <xs:import namespace="http://microsoft.com/wsdl/types/" />
+  <xs:complexType name="EditorialObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expando">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Good" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Vfx" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Unit" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Notes" type="tns:ArrayOfNote" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Expando">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ParameterSet" xmlns:q1="http://schemas.quine.no/core/v1_0.xsd" type="q1:ParameterSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Note" nillable="true" type="tns:Note" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Note">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SegmentStart" xmlns:q2="http://schemas.quine.no/core/v1_0.xsd" type="q2:TimeReference" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegmentStop" xmlns:q3="http://schemas.quine.no/core/v1_0.xsd" type="q3:TimeReference" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Text" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Id" xmlns:q4="http://microsoft.com/wsdl/types/" type="q4:guid" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ProductionJob">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expando">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="AcquisitionStart" xmlns:q5="http://schemas.quine.no/core/v1_0.xsd" type="q5:TimeReference" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AcquisitionStop" xmlns:q6="http://schemas.quine.no/core/v1_0.xsd" type="q6:TimeReference" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="QbRecordingJob">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProductionJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProjectFps" xmlns:q7="http://schemas.quine.no/core/v1_0.xsd" type="q7:TimecodeRate" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Id" xmlns:q8="http://microsoft.com/wsdl/types/" type="q8:guid" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MachineName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProjectName" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Location">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expando">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Notes" type="tns:ArrayOfNote" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CameraDescription">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expando">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ModelName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CameraName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ClipName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProjectFramerate" xmlns:q9="http://schemas.quine.no/core/v1_0.xsd" type="q9:TimecodeRate" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CaptureFramerate" xmlns:q10="http://schemas.quine.no/core/v1_0.xsd" type="q10:TimecodeRate" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SensorCrop" xmlns:q11="http://schemas.quine.no/core/v1_0.xsd" type="q11:DimensionOfVector2" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SensorAspect" xmlns:q12="http://schemas.quine.no/core/v1_0.xsd" type="q12:Rational" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DisplayAspect" xmlns:q13="http://schemas.quine.no/core/v1_0.xsd" type="q13:Rational" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SensorType" type="tns:CameraSensorType" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ShutterType" type="tns:CameraShutterType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ShutterSpeed" xmlns:q14="http://schemas.quine.no/core/v1_0.xsd" type="q14:DimensionOfSingle" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NdFilter" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BaseGain" xmlns:q15="http://schemas.quine.no/core/v1_0.xsd" type="q15:Color" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BaseWB" xmlns:q16="http://schemas.quine.no/core/v1_0.xsd" type="q16:Color" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ColorWheelWB" xmlns:q17="http://schemas.quine.no/core/v1_0.xsd" type="q17:Color" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AnamorphicStretch" type="xs:float" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HDR" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CaptureSettings" type="tns:ArrayOfCameraCaptureSettings" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CameraSensorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNSPECIFIED" />
+      <xs:enumeration value="CCD" />
+      <xs:enumeration value="CMOS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CameraShutterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNSPECIFIED" />
+      <xs:enumeration value="Global" />
+      <xs:enumeration value="Rolling" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfCameraCaptureSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CameraCaptureSettings" nillable="true" type="tns:CameraCaptureSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CameraCaptureSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Gain" xmlns:q18="http://schemas.quine.no/core/v1_0.xsd" type="q18:Color" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WB" xmlns:q19="http://schemas.quine.no/core/v1_0.xsd" type="q19:Color" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Lut" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FormatName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Compression" type="tns:CameraCompression" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Scaling" xmlns:q20="http://schemas.quine.no/core/v1_0.xsd" type="q20:Vector2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Gamma" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Resolution" xmlns:q21="http://schemas.quine.no/core/v1_0.xsd" type="q21:DimensionOfVector2" />
+    </xs:sequence>
+    <xs:attribute name="CaptureType" type="tns:CameraCaptureType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="CameraCompression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expando">
+        <xs:attribute name="Algorithm" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CameraCaptureType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNSPECIFIED" />
+      <xs:enumeration value="SDI" />
+      <xs:enumeration value="Magazine" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Resource">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expando">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="FormatName" xmlns:q22="http://schemas.quine.no/core/v1_0.xsd" type="q22:DimensionOfString" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Hash" xmlns:q23="http://schemas.quine.no/core/v1_0.xsd" type="q23:Hash" />
+          <xs:element minOccurs="1" maxOccurs="1" name="FragmentCount" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AcquisitionType" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AcquisitionStart" xmlns:q24="http://schemas.quine.no/core/v1_0.xsd" type="q24:TimeReference" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AcquisitionStop" xmlns:q25="http://schemas.quine.no/core/v1_0.xsd" type="q25:TimeReference" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Tracks" type="tns:ArrayOfTrack" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OriginalVolumeLabel" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OriginalVolumePath" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTrack">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Track" nillable="true" type="tns:Track" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Track">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CodecParameters" type="tns:CodecParameters" />
+    </xs:sequence>
+    <xs:attribute name="DeviceId" xmlns:q26="http://microsoft.com/wsdl/types/" type="q26:guid" use="required" />
+  </xs:complexType>
+  <xs:complexType name="CodecParameters">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expando">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CodecName" xmlns:q27="http://schemas.quine.no/core/v1_0.xsd" type="q27:DimensionOfString" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Bitrate" xmlns:q28="http://schemas.quine.no/core/v1_0.xsd" type="q28:DimensionOfInt32" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Resolution" xmlns:q29="http://schemas.quine.no/core/v1_0.xsd" type="q29:DimensionOfVector2" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PixelFormat" xmlns:q30="http://schemas.quine.no/core/v1_0.xsd" type="q30:DimensionOfString" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SampleRate" xmlns:q31="http://schemas.quine.no/core/v1_0.xsd" type="q31:DimensionOfInt32" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SampleFormat" xmlns:q32="http://schemas.quine.no/core/v1_0.xsd" type="q32:DimensionOfString" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ChannelCount" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FrameRate" xmlns:q33="http://schemas.quine.no/core/v1_0.xsd" type="q33:Rational" />
+        </xs:sequence>
+        <xs:attribute name="MediaType" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

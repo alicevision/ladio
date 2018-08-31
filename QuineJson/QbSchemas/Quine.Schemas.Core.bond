@@ -1,0 +1,84 @@
+// Fundamental types used in other schemas.
+// NB! Corresponds to types defined in Quine.Schemas.Core.{Core.cs,Time.cs,UUID.cs}
+// (c) 2018 Quine AS
+
+namespace quine.schemas.core
+
+// bond.GUID is Windows-compatible; this is a 16-byte container to store boost::uuid
+// Individual fields MUST NOT be interpreted in any way (may be byte-reversed, etc.).
+// I.e., the only valid operation on this type is to copy to/from boost::uuid
+struct UUID {
+    0: required uint64 Hi = 0;
+    1: required uint64 Lo = 0;
+}
+
+struct Rational {
+    0: required int32 Num = 0;
+    1: required int32 Den = 0;
+}
+
+// Value with optional string describing the units.
+struct Dimension<T> {
+    0: required T Value;
+    1: string Unit;
+}
+
+struct Vector2 {
+    0: required float X;
+    1: required float Y;
+}
+
+struct Vector3 : Vector2 {
+    0: required float Z;
+}
+
+struct Rectangle {
+    0: required Vector2 Corner;
+    1: required Vector2 Size;
+    2: int8 Quadrant = 3;
+}
+
+struct Color : Vector3 {
+    0: string Colorspace;
+}
+
+struct Hash {
+    0: required string Algorithm;
+    1: blob Value;
+}
+
+struct TimecodeRate : Rational {
+    0: bool Drop = false;       // true if drop frame
+}
+
+struct TimecodeTime {
+    0: required int8 H;
+    1: required int8 M;
+    2: required int8 S;
+    3: required int32 F;
+    4: int32 N = -1;            // Frame number wrt implied frame rate
+}
+
+struct Timestamp {
+    0: required int64 LocalFiletime;    // Windows FILETIME, UTC
+    1: int16 TzOffset;                  // Current TZ offset in minutes when the time was taken
+}
+
+// Origin and scale match CamBoxRecorder's default timestamp format.
+struct TimeReference {
+    0: Timestamp Timestamp;
+    1: TimecodeTime Timecode;
+}
+
+struct ParameterSet {
+    0: map<string, Dimension<int64>> I;
+    1: map<string, Dimension<double>> F;
+    2: map<string, Dimension<string>> S;
+    3: map<string, Dimension<vector<int64>>> VI;
+}
+
+// Data sample from whatever source at a given time point.
+struct AcquisitionSample {
+    0: TimeReference TimeReference;
+    1: ParameterSet ParameterSet;
+}

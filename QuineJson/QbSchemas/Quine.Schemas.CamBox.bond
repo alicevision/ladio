@@ -1,0 +1,65 @@
+// Schema used by QuineBox to save data.
+// (c) 2018 Quine AS
+
+import "Quine.Schemas.Core.bond"
+namespace quine.schemas.cambox
+
+// DEVICES DESCRIPTIONS /////////////////////////////////////////////////////
+
+// Quine.Schemas.Main.ProductionDevice
+struct DeviceDescription {
+    0: required string Type;
+    1: string Manufacturer;
+    2: string Model;
+    3: string Serial;
+    4: string Firmware;
+    5: quine.schemas.core.ParameterSet ParameterSet;
+}
+
+// OUTPUT FILE DESCRIPTION //////////////////////////////////////////////////
+
+// Quine.Schemas.Augmented.CodecPreset
+struct CodecParameters {
+    0: required string MediaType;
+    1: required quine.schemas.core.Dimension<string> CodecName;
+    2: quine.schemas.core.Dimension<int32> Bitrate;
+    3: quine.schemas.core.Dimension<quine.schemas.core.Vector2> Resolution;
+    4: quine.schemas.core.Dimension<string> PixelFormat;
+    5: quine.schemas.core.Dimension<int32> SampleRate;
+    6: quine.schemas.core.Dimension<string> SampleFormat;
+    7: int32 ChannelCount;
+    8: quine.schemas.core.TimecodeRate FrameRate;
+}
+
+// Track is bound to the device it created it.  Track type.
+// Framerate, if supplied, is the rate of the underlying data.
+struct Track {
+    0: required DeviceDescription SourceDevice;
+    1: required CodecParameters CodecParameters;
+}
+
+// Describes a file written by the recorder.  Start/Stop time reference is common to all tracks in the file.
+struct FileDescription {
+    0: required quine.schemas.core.UUID Id;
+    1: string AcquisitionType;
+    2: string OriginalVolumePath;
+    3: quine.schemas.core.TimeReference AcquisitionStart;
+    4: quine.schemas.core.TimeReference AcquisitionStop;
+    5: vector<Track> Tracks;
+    6: quine.schemas.core.Dimension<string> FormatName;
+    7: string CodecPresetName;
+    8: string Type;                 // generic file type (video, data, etc.)
+    9: string OriginalVolumeLabel;  // QB that generated this file
+}
+
+// This maps to ProductionJob in the database.  "Flow" in recorder parlance.
+struct JobDescription {
+    0: required quine.schemas.core.UUID Id;
+    1: required string Type;
+    2: required string MachineName;
+    3: string ProjectName;
+    4: quine.schemas.core.TimecodeRate ProjectFps;  // QB setting
+    5: quine.schemas.core.TimeReference AcquisitionStart;
+    6: quine.schemas.core.TimeReference AcquisitionStop;
+}
+

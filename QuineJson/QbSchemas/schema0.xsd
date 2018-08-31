@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://microsoft.com/wsdl/types/" />
+  <xs:import namespace="http://schemas.quine.no/main/v1_0.xsd" />
+  <xs:element name="CloudIngestQ" nillable="true" type="CloudIngestQ" />
+  <xs:complexType name="CloudIngestQ">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Token" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ResourceId" xmlns:q1="http://microsoft.com/wsdl/types/" type="q1:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IngestData" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Error" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IngestQ" nillable="true" type="IngestQ" />
+  <xs:complexType name="IngestQ">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ProductionJobId" xmlns:q2="http://microsoft.com/wsdl/types/" type="q2:guid" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ObjectId" xmlns:q3="http://microsoft.com/wsdl/types/" type="q3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IngestedId" nillable="true" xmlns:q4="http://microsoft.com/wsdl/types/" type="q4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjectDescription" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IngestError" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductionJob" xmlns:q5="http://schemas.quine.no/main/v1_0.xsd" type="q5:ProductionJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XmlRepresentationAttribute" nillable="true" type="XmlRepresentationAttribute" />
+  <xs:complexType name="XmlRepresentationAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Attribute" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Attribute" abstract="true" />
+  <xs:element name="SidecarUploadFlags" type="SidecarUploadFlags" />
+  <xs:simpleType name="SidecarUploadFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL_DATA" />
+          <xs:enumeration value="NO_DATA" />
+          <xs:enumeration value="JSON_DATA" />
+          <xs:enumeration value="XML_DATA" />
+          <xs:enumeration value="BIN_DATA" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="UploadDestination" nillable="true" type="UploadDestination" />
+  <xs:complexType name="UploadDestination">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DestinationName" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VolumeId" xmlns:q6="http://microsoft.com/wsdl/types/" type="q6:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Path" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Username" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Password" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SidecarUploadMask" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Volume" xmlns:q7="http://schemas.quine.no/main/v1_0.xsd" type="q7:Volume" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadQ" nillable="true" type="UploadQ" />
+  <xs:complexType name="UploadQ">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ResourceId" xmlns:q8="http://microsoft.com/wsdl/types/" type="q8:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DestinationName" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CreationTime" type="DateTimeOffset" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UploadPriority" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocalPath" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LastAttempt" nillable="true" type="DateTimeOffset" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UploadError" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Resource" xmlns:q9="http://schemas.quine.no/main/v1_0.xsd" type="q9:Resource" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UploadDestination" type="UploadDestination" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DateTimeOffset" />
+</xs:schema>

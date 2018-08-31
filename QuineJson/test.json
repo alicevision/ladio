@@ -1,0 +1,542 @@
+{
+  "Resource": {
+    "Id": "465dc776-dcaa-4c2e-a806-fc9ff7a99483",
+    "Type": "MEDIA",
+    "ProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+    "XmlProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+    "XmlProductionJobIdSpecified": true,
+    "Filename": "Z999_C9993RHF6T.mov",
+    "Size": 1515886,
+    "CreationTime": "2018-08-24T12:42:46.3552354+02:00",
+    "XmlCreationTime": {
+      "TzOffset": 120,
+      "LocalFiletime": "2018-08-24T12:42:46.3552354"
+    },
+    "XmlCreationTimeSpecified": true,
+    "StartTc": "12:35:12:18   ",
+    "StopTc": "12:35:15:07   ",
+    "Augmented": {
+      "Extensions": null,
+      "FormatName": {
+        "Unit": "FFMPEG",
+        "Value": "MOV"
+      },
+      "Hash": {
+        "Algorithm": "MD5",
+        "Value": "zGwZG4zNfQGc9ZEoid7CKQ=="
+      },
+      "FragmentCount": 0,
+      "AcquisitionType": "",
+      "AcquisitionStart": {
+        "Timestamp": {
+          "TzOffset": 120,
+          "LocalFiletime": "2018-08-24T12:42:46.3552354+02:00"
+        },
+        "Timecode": {
+          "H": 12,
+          "M": 35,
+          "S": 12,
+          "F": 18,
+          "N": -1
+        }
+      },
+      "AcquisitionStop": {
+        "Timestamp": {
+          "TzOffset": 120,
+          "LocalFiletime": "2018-08-24T12:42:49.0908559+02:00"
+        },
+        "Timecode": {
+          "H": 12,
+          "M": 35,
+          "S": 15,
+          "F": 7,
+          "N": -1
+        }
+      },
+      "Tracks": [
+        {
+          "DeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+          "CodecParameters": {
+            "Extensions": null,
+            "MediaType": "VIDEO",
+            "CodecName": {
+              "Unit": "FFMPEG",
+              "Value": "h264"
+            },
+            "Bitrate": {
+              "Unit": "bps",
+              "Value": 3000000
+            },
+            "Resolution": {
+              "Unit": "pixel",
+              "Value": {
+                "X": 1920.0,
+                "Y": 1080.0
+              }
+            },
+            "PixelFormat": {
+              "Unit": "FFMPEG",
+              "Value": "nv12"
+            },
+            "SampleRate": {
+              "Unit": "",
+              "Value": 0
+            },
+            "SampleFormat": {
+              "Unit": "",
+              "Value": ""
+            },
+            "ChannelCount": 0,
+            "FrameRate": {
+              "Num": 25,
+              "Den": 1
+            },
+            "ParameterSet": null
+          }
+        },
+        {
+          "DeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+          "CodecParameters": {
+            "Extensions": null,
+            "MediaType": "AUDIO",
+            "CodecName": {
+              "Unit": "FFMPEG",
+              "Value": "pcm_s16le"
+            },
+            "Bitrate": {
+              "Unit": "bps",
+              "Value": 1536000
+            },
+            "Resolution": {
+              "Unit": "",
+              "Value": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            "PixelFormat": {
+              "Unit": "",
+              "Value": ""
+            },
+            "SampleRate": {
+              "Unit": "Hz",
+              "Value": 48000
+            },
+            "SampleFormat": {
+              "Unit": "FFMPEG",
+              "Value": "s16"
+            },
+            "ChannelCount": 2,
+            "FrameRate": {
+              "Num": 0,
+              "Den": 0
+            },
+            "ParameterSet": null
+          }
+        }
+      ],
+      "OriginalVolumeLabel": "DESKTOP-9561G20",
+      "OriginalVolumePath": "43c9e360-3397-4302-976f-2f05f63ddbe8\\SDI\\daily\\Z999_C9993RHF6T.mov",
+      "ParameterSet": {
+        "I": [],
+        "F": [],
+        "S": [
+          {
+            "Key": "qb-codec-preset",
+            "Unit": null,
+            "Value": "daily"
+          }
+        ]
+      }
+    },
+    "ProductionJob": {
+      "Id": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "Type": "QB FORCED RECORDING",
+      "ParentId": null,
+      "XmlParentIdSpecified": false,
+      "Augmented": {
+        "ProjectFps": {
+          "Drop": false,
+          "Num": 0,
+          "Den": 0
+        },
+        "Extensions": null,
+        "Id": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+        "MachineName": "DESKTOP-9561G20",
+        "ProjectName": "",
+        "AcquisitionStart": {
+          "Timestamp": {
+            "TzOffset": 120,
+            "LocalFiletime": "2018-08-24T12:42:46.3120655+02:00"
+          },
+          "Timecode": {
+            "H": 12,
+            "M": 35,
+            "S": 12,
+            "F": 18,
+            "N": 1132818
+          }
+        },
+        "AcquisitionStop": {
+          "Timestamp": {
+            "TzOffset": 0,
+            "LocalFiletime": "1601-01-01T01:00:00+01:00"
+          },
+          "Timecode": {
+            "H": 0,
+            "M": 0,
+            "S": 0,
+            "F": 0,
+            "N": -1
+          }
+        },
+        "ParameterSet": null
+      },
+      "Parent": null,
+      "ProductionJobInput": [
+        {
+          "Id": "b2fd60ea-019f-45d0-a67e-1d018cf5b266",
+          "ProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+          "ProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+          "XmlProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+          "XmlProductionDeviceIdSpecified": true,
+          "ResourceId": null,
+          "XmlResourceIdSpecified": false,
+          "Augmented": {
+            "Extensions": null,
+            "ParameterSet": {
+              "I": [],
+              "F": [],
+              "S": [
+                {
+                  "Key": "SourceFile",
+                  "Unit": "",
+                  "Value": "riverbed.yuv"
+                }
+              ]
+1            }
+          },
+          "ProductionDevice": {
+            "Id": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+            "Type": "FILEREADER",
+            "Manufacturer": "QUINE AS",
+            "Model": "",
+            "Serial": "DESKTOP-9561G20",
+            "Firmware": "3.0.6807.1502",
+            "Augmented": {
+              "Extensions": null,
+              "ParameterSet": {
+                "I": [],
+                "F": [],
+                "S": [
+                  {
+                    "Key": "SourceFile",
+                    "Unit": "",
+                    "Value": "riverbed.yuv"
+                  }
+                ]
+              }
+            }
+          },
+          "Resource": null
+        },
+        {
+          "Id": "ea3a175f-5a7e-4748-adf6-4256b00e7d8d",
+          "ProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+          "ProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+          "XmlProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+          "XmlProductionDeviceIdSpecified": true,
+          "ResourceId": null,
+          "XmlResourceIdSpecified": false,
+          "Augmented": {
+            "Extensions": null,
+            "ParameterSet": {
+              "I": [],
+              "F": [],
+              "S": [
+                {
+                  "Key": "SourceFile",
+                  "Unit": "",
+                  "Value": "riverbed.yuv"
+                }
+              ]
+            }
+          },
+          "ProductionDevice": {
+            "Id": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+            "Type": "FILEREADER",
+            "Manufacturer": "QUINE AS",
+            "Model": "",
+            "Serial": "DESKTOP-9561G20",
+            "Firmware": "3.0.6807.1502",
+            "Augmented": {
+              "Extensions": null,
+              "ParameterSet": {
+                "I": [],
+                "F": [],
+                "S": [
+                  {
+                    "Key": "SourceFile",
+                    "Unit": "",
+                    "Value": "riverbed.yuv"
+                  }
+                ]
+              }
+            }
+          },
+          "Resource": null
+        },
+        {
+          "Id": "81caf079-86c5-4fd7-a772-bd4aa0e4a328",
+          "ProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+          "ProductionDeviceId": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+          "XmlProductionDeviceId": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+          "XmlProductionDeviceIdSpecified": true,
+          "ResourceId": null,
+          "XmlResourceIdSpecified": false,
+          "Augmented": null,
+          "ProductionDevice": {
+            "Id": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+            "Type": "QB",
+            "Manufacturer": "QUINE AS",
+            "Model": null,
+            "Serial": "desktop-9561g20",
+            "Firmware": "3.0.6807.1502",
+            "Augmented": null
+          },
+          "Resource": null
+        }
+      ],
+      "Children": []
+    },
+    "EditorialObjectResource": [
+      {
+        "EditorialObjectId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+        "ResourceId": "465dc776-dcaa-4c2e-a806-fc9ff7a99483",
+        "EditorialObject": {
+          "Id": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+          "Type": "CLIP",
+          "Label": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+          "ParentId": null,
+          "XmlParentIdSpecified": false,
+          "Augmented": null,
+          "LocationId": null,
+          "XmlLocationIdSpecified": false,
+          "Parent": null,
+          "Location": null
+        }
+      }
+    ],
+    "ResourceLocator": [
+      {
+        "Id": "1618800b-5e6f-4801-aa04-f9a90335dd59",
+        "ResourceId": "465dc776-dcaa-4c2e-a806-fc9ff7a99483",
+        "VolumeId": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+        "VolumePath": "43c9e360-3397-4302-976f-2f05f63ddbe8\\SDI\\daily",
+        "Volume": {
+          "Id": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+          "Type": "LOCAL",
+          "Address": "C:\\CamBox\\Output"
+        }
+      }
+    ],
+    "ProductionJobInput": []
+  },
+  "Location": null,
+  "EditorialObject": [
+    {
+      "Id": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "Type": "CLIP",
+      "Label": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "ParentId": null,
+      "XmlParentIdSpecified": false,
+      "Augmented": null,
+      "LocationId": null,
+      "XmlLocationIdSpecified": false,
+      "Parent": null,
+      "Location": null
+    }
+  ],
+  "ProductionJob": {
+    "Id": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+    "Type": "QB FORCED RECORDING",
+    "ParentId": null,
+    "XmlParentIdSpecified": false,
+    "Augmented": {
+      "ProjectFps": {
+        "Drop": false,
+        "Num": 0,
+        "Den": 0
+      },
+      "Extensions": null,
+      "Id": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "MachineName": "DESKTOP-9561G20",
+      "ProjectName": "",
+      "AcquisitionStart": {
+        "Timestamp": {
+          "TzOffset": 120,
+          "LocalFiletime": "2018-08-24T12:42:46.3120655+02:00"
+        },
+        "Timecode": {
+          "H": 12,
+          "M": 35,
+          "S": 12,
+          "F": 18,
+          "N": 1132818
+        }
+      },
+      "AcquisitionStop": {
+        "Timestamp": {
+          "TzOffset": 0,
+          "LocalFiletime": "1601-01-01T01:00:00+01:00"
+        },
+        "Timecode": {
+          "H": 0,
+          "M": 0,
+          "S": 0,
+          "F": 0,
+          "N": -1
+        }
+      },
+      "ParameterSet": null
+    },
+    "Parent": null,
+    "ProductionJobInput": [],
+    "Children": []
+  },
+  "ResourceLocator": [
+    {
+      "Id": "1618800b-5e6f-4801-aa04-f9a90335dd59",
+      "ResourceId": "465dc776-dcaa-4c2e-a806-fc9ff7a99483",
+      "VolumeId": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+      "VolumePath": "43c9e360-3397-4302-976f-2f05f63ddbe8\\SDI\\daily",
+      "Volume": {
+        "Id": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+        "Type": "LOCAL",
+        "Address": "C:\\CamBox\\Output"
+      }
+    }
+  ],
+  "Volume": [
+    {
+      "Id": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+      "Type": "LOCAL",
+      "Address": "C:\\CamBox\\Output"
+    }
+  ],
+  "EditorialObjectResource": [
+    {
+      "EditorialObjectId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "ResourceId": "465dc776-dcaa-4c2e-a806-fc9ff7a99483",
+      "EditorialObject": {
+        "Id": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+        "Type": "CLIP",
+        "Label": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+        "ParentId": null,
+        "XmlParentIdSpecified": false,
+        "Augmented": null,
+        "LocationId": null,
+        "XmlLocationIdSpecified": false,
+        "Parent": null,
+        "Location": null
+      }
+    }
+  ],
+  "ProductionDevice": [
+    {
+      "Id": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+      "Type": "FILEREADER",
+      "Manufacturer": "QUINE AS",
+      "Model": "",
+      "Serial": "DESKTOP-9561G20",
+      "Firmware": "3.0.6807.1502",
+      "Augmented": {
+        "Extensions": null,
+        "ParameterSet": {
+          "I": [],
+          "F": [],
+          "S": [
+            {
+              "Key": "SourceFile",
+              "Unit": "",
+              "Value": "riverbed.yuv"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Id": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+      "Type": "QB",
+      "Manufacturer": "QUINE AS",
+      "Model": null,
+      "Serial": "desktop-9561g20",
+      "Firmware": "3.0.6807.1502",
+      "Augmented": null
+    }
+  ],
+  "ProductionJobInput": [
+    {
+      "Id": "b2fd60ea-019f-45d0-a67e-1d018cf5b266",
+      "ProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "ProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+      "XmlProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+      "XmlProductionDeviceIdSpecified": true,
+      "ResourceId": null,
+      "XmlResourceIdSpecified": false,
+      "Augmented": {
+        "Extensions": null,
+        "ParameterSet": {
+          "I": [],
+          "F": [],
+          "S": [
+            {
+              "Key": "SourceFile",
+              "Unit": "",
+              "Value": "riverbed.yuv"
+            }
+          ]
+        }
+      },
+      "ProductionDevice": null,
+      "Resource": null
+    },
+    {
+      "Id": "ea3a175f-5a7e-4748-adf6-4256b00e7d8d",
+      "ProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "ProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+      "XmlProductionDeviceId": "8be7c5d9-af51-4570-95c1-3ff2001fc73d",
+      "XmlProductionDeviceIdSpecified": true,
+      "ResourceId": null,
+      "XmlResourceIdSpecified": false,
+      "Augmented": {
+        "Extensions": null,
+        "ParameterSet": {
+          "I": [],
+          "F": [],
+          "S": [
+            {
+              "Key": "SourceFile",
+              "Unit": "",
+              "Value": "riverbed.yuv"
+            }
+          ]
+        }
+      },
+      "ProductionDevice": null,
+      "Resource": null
+    },
+    {
+      "Id": "81caf079-86c5-4fd7-a772-bd4aa0e4a328",
+      "ProductionJobId": "43c9e360-3397-4302-976f-2f05f63ddbe8",
+      "ProductionDeviceId": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+      "XmlProductionDeviceId": "04fab58b-9494-4d2f-9bdb-548009ae9675",
+      "XmlProductionDeviceIdSpecified": true,
+      "ResourceId": null,
+      "XmlResourceIdSpecified": false,
+      "Augmented": null,
+      "ProductionDevice": null,
+      "Resource": null
+    }
+  ]
+}
